@@ -1,0 +1,111 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "base";
+@import "normalize";
+/** Solarize colors **/
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+.mceContentBody {
+	@include debug-vertical-alignment;
+	background-color: $base3;
+	color: $base00;
+	blockquote {
+		border-left: 0.5em solid $base0;
+		padding-left: $indent-amount;
+		background-color: $base2;
+		color: $base03;
+		font-family: $serif;
+		font-style: italic;
+		p { text-indent: $indent-amount; }
+		em { border-bottom: 1px dashed; }
+	}
+
+	h1,h2,h3,h4,h5,h6 { color: $base03; }
+	a:link, a:visited { color: $blue; }
+	a:hover, a:active, a:focus { color: $violet; }
+	pre, code { background-color: white; color: $red; border: 1px solid $base2; }
+	dt { color: $base02; }
+	dd { color: $base00; }
+	del { color: $base1; }
+	// Inline and block code styles
+code,
+pre {
+  padding: 0 3px 2px;
+  font-size: $base-font-size - 2;
+  @include border-radius(3px);
+}
+
+// Inline code
+code {
+  padding: 2px 4px;
+}
+
+// Blocks of code
+pre {
+  display: block;
+  padding: ($base-line-height - 1) / 2;
+  margin: 0 0 $base-line-height / 2;
+  font-size: $base-font-size - 1; // 14px to 13px
+  line-height: $base-line-height;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  @include border-radius(4px);
+
+  // Make prettyprint styles more spaced out for readability
+  &.prettyprint {
+    margin-bottom: $base-line-height;
+  }
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+pre, code, tt, kbd, samp, var   {
+	font-size: ms(-1);
+	line-height: ms(2, ms(-1));
+}
+kbd {
+  kbd, samp {
+    font-size: 100%;
+    background-color: transparent;
+  }
+}
+samp { font-style: italic; }
+code var {
+  font-size: 100%;
+  background-color: transparent;
+}
+
+pre {
+  code, samp, var { padding: 0; }
+}
+kbd { display: inline-block; padding: 0 1em; @include border-radius(5px); font-weight: bold; border: 1px solid $blue; }
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+}
